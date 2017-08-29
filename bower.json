@@ -1,0 +1,22 @@
+{
+  "name": "svg_avatar_angularjs",
+  "version": "1.0.0",
+  "description": "angular module for svg_avatar",
+  "main": "index.js",
+  "authors": [
+    "Gabriel Franck"
+  ],
+  "moduleType": [
+    "globals"
+  ],
+  "dependencies": {},
+  "license": "MIT",
+  "homepage": "https://github.com/Gabfranck/svg_avatar_angularjs",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
