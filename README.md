@@ -2,7 +2,11 @@
 
 by Gabriel Franck
 
-SvgAvatarAngularJs  is an AngularJS module based on [SvgAvatar](https://github.com/Gabfranck/svg_avatar) allow us to use svgAvatar methods and add some directives. 
+SvgAvatarAngularJs  is an AngularJS module based on [SvgAvatar](https://github.com/Gabfranck/svg_avatar) allow us to use svgAvatar methods and add some directives.
+
+Link to [npm](https://www.npmjs.com/package/svg_avatar_angularjs)
+
+Link to [gitHub](https://github.com/Gabfranck/svg_avatar_angularjs)
 
 
 ## Demo
@@ -11,7 +15,7 @@ No demo for now (coming soon).
 [Here](http://embed.plnkr.co/lS0mFYevQgzXaiVnhiSJ/) is a link to the svgAvatar live demo.
 
 
-## Installation 
+## Installation
 
 Install it via npm :
 ```bash
@@ -35,7 +39,7 @@ app = angular.module('myApp',['svgAvatarAngularjs'])
 
 #### svgAvatar
 
-The svgAvatar directive allow us to easily display an avatar. 
+The svgAvatar directive allow us to easily display an avatar.
 
 ##### Syntax
 
@@ -53,7 +57,7 @@ The svgAvatar directive allow us to easily display an avatar.
 
 ### Methods
 
-Before using methods you need to require the svgAvatarService in your controller, service ... : 
+Before using methods you need to require the svgAvatarService in your controller, service ... :
 ```javascript
 app.controller('myController', function(svgAvatarService){
 	// Your controller code
@@ -106,63 +110,65 @@ svgAvatarService.render_svg(avatar) //-> SVG String (avatar_svg)
 
 ---
 
+
 #### random_avatar()
 
-Generate a random avatar object
+Generate a random avatar object or Svg string
 
 ##### Syntax
 
 ```javascript
 svgAvatarService.random_avatar() //-> Object (avatar)
-```
-
----
-
-#### render_random_svg()
-
-Generate a random avatar in svg
-
-##### Syntax
-
-```javascript
 svgAvatarService.render_random_svg() //-> SVG String (avatar_svg)
 ```
 
 ---
 
-#### next_part_avatar() and previous_part_avatar()
+#### modify_avatar()
 
-Return an avatar object with a part changed (it loops when max value is reached)
+Return an avatar object or Svg string with a color or pattern changed, you can choose the direction "next" to increment or "previous" to decrement (it loops when max/min value is reached)
 
 ##### Syntax
 
 ```javascript
-svgAvatarService.next_part_avatar(avatar, part) //-> Object (avatar)
-svgAvatarService.previous_part_avatar(avatar, part) //-> Object (avatar)
+svgAvatarService.modify_avatar(avatar, part, change, direction) //-> Object (avatar)
+svgAvatarService.modify_avatar_svg(avatar, part, change, direction) //-> Object (avatar)
 ```
 
 |Parameters| value | description|
 |---|---|---|
 |avatar | Object or String | the avatar value in json or in string |
-|part|"forms","eyes","mouths","color1" or "color2"| the part to increment or decrement |
+|part|"form","eye","mouth" by default| the part selected |
+|change|"pattern" or "color"| the modification to do  |
+|direction|"next" or "previous"| the direction to increment or decrement |
 
 ---
 
-#### next_part_svg() and previous_part_svg()
+#### next / previous for color / pattern methods
 
-Return an avatar in svg with a part changed (it loops when max value is reached)
+Return an avatar object or Svg string with a color or pattern changed, you can choose the direction "next" to increment or "previous" to decrement (it loops when max/min value is reached)
 
 ##### Syntax
 
 ```javascript
-svgAvatarService.next_part_svg(avatar, part) //-> SVG String (avatar_svg)
-svgAvatarService.previous_part_svg(avatar, part) //-> SVG String (avatar_svg)
+svgAvatarService.next_color_avatar(avatar, part) //-> Object (avatar)
+svgAvatarService.previous_color_avatar(avatar, part) //-> Object (avatar)
+
+svgAvatarService.next_color_svg(avatar, part) //-> SVG String (avatar_svg)
+svgAvatarService.previous_color_svg(avatar, part) //-> SVG String (avatar_svg)
+
+svgAvatarService.next_pattern_avatar(avatar, part) //-> Object (avatar)
+svgAvatarService.previous_pattern_avatar(avatar, part) //-> Object (avatar)
+
+svgAvatarService.next_pattern_svg(avatar, part) //-> SVG String (avatar_svg)
+svgAvatarService.previous_pattern_svg(avatar, part) //-> SVG String (avatar_svg)
+
 ```
 
 |Parameters| value | description|
 |---|---|---|
 |avatar | Object or String | the avatar value in json or in string |
-|part|"forms","eyes","mouths","color1" or "color2"| the part to increment or decrement |
+|part|"form","eye","mouth" by default| the part to increment or decrement |
 
 
 ## Tests
@@ -172,5 +178,5 @@ There's no test for now.
 
 ## Build / Contribute
 
-In order to make svgAvatarAngularsvg working with SvgAvatar you need to put the content of svgAvatar/bundle.js at the beginning of the code of svgAvatarAngularjs/svg_avatar_angularjs.js. 
-Look at [this](https://github.com/Gabfranck/svg_avatar#tests) if you want to make a new bundle.js 
+In order to make svgAvatarAngularsvg working with SvgAvatar you need to put the content of svgAvatar/bundle.js at the beginning of the code of svgAvatarAngularjs/svg_avatar_angularjs.js.
+Look at [this](https://github.com/Gabfranck/svg_avatar#tests) if you want to make a new bundle.js
